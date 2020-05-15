@@ -1,6 +1,5 @@
 # MVVMR
 
-[![CI Status](https://img.shields.io/travis/Alin Radut/MVVMR.svg?style=flat)](https://travis-ci.org/Alin Radut/MVVMR)
 [![Version](https://img.shields.io/cocoapods/v/MVVMR.svg?style=flat)](https://cocoapods.org/pods/MVVMR)
 [![License](https://img.shields.io/cocoapods/l/MVVMR.svg?style=flat)](https://cocoapods.org/pods/MVVMR)
 [![Platform](https://img.shields.io/cocoapods/p/MVVMR.svg?style=flat)](https://cocoapods.org/pods/MVVMR)
