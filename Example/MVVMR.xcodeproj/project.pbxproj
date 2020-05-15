@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C898E246F062800E7073D /* AppCoordinator.swift */; };
+		3B8C8993246F06A200E7073D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8992246F06A200E7073D /* AppRouter.swift */; };
+		3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8999246F071800E7073D /* DashboardViewController.swift */; };
+		3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C899B246F075100E7073D /* DashboardViewModel.swift */; };
+		3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C899D246F077700E7073D /* DashboardRouter.swift */; };
+		3B8C8A0B246F12EC00E7073D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A07246F12EC00E7073D /* LoginRouter.swift */; };
+		3B8C8A0C246F12EC00E7073D /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A08246F12EC00E7073D /* LoginViewController.storyboard */; };
+		3B8C8A0D246F12EC00E7073D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A09246F12EC00E7073D /* LoginViewController.swift */; };
+		3B8C8A0E246F12EC00E7073D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A0A246F12EC00E7073D /* LoginViewModel.swift */; };
+		3B8C8A14246F168B00E7073D /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A10246F168B00E7073D /* RegisterRouter.swift */; };
+		3B8C8A15246F168B00E7073D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A11246F168B00E7073D /* RegisterViewController.swift */; };
+		3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */; };
+		3B8C8A17246F168B00E7073D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A13246F168B00E7073D /* RegisterViewController.xib */; };
 		59D2ECAA274ED6E20DA26647 /* Pods_MVVMR_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD49935C8AEC04A0F04C30DE /* Pods_MVVMR_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -29,20 +41,32 @@
 
 /* Begin PBXFileReference section */
 		25656787A348672C38DD131A /* Pods_MVVMR_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CC62DD9844BC29E23AAB6F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		3E0F47B2204720DD00862C13 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2CC62DD9844BC29E23AAB6F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3B8C898E246F062800E7073D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3B8C8992246F06A200E7073D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		3B8C8999246F071800E7073D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		3B8C899B246F075100E7073D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		3B8C899D246F077700E7073D /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		3B8C8A07246F12EC00E7073D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		3B8C8A08246F12EC00E7073D /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		3B8C8A09246F12EC00E7073D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3B8C8A0A246F12EC00E7073D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3B8C8A10246F168B00E7073D /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		3B8C8A11246F168B00E7073D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		3B8C8A13246F168B00E7073D /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		3E0F47B2204720DD00862C13 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		457C677B06E6EDDC399E31D6 /* Pods-MVVMR_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Example.release.xcconfig"; path = "Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MVVMR_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMR_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MVVMR_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMR_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7EFD6148F719CA70A1CE1151 /* MVVMR.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MVVMR.podspec; path = ../MVVMR.podspec; sourceTree = "<group>"; };
+		7EFD6148F719CA70A1CE1151 /* MVVMR.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MVVMR.podspec; path = ../MVVMR.podspec; sourceTree = "<group>"; };
 		92022AAA04282A0D7AEFADFD /* Pods-MVVMR_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Example.debug.xcconfig"; path = "Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AD49935C8AEC04A0F04C30DE /* Pods_MVVMR_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5AAC509C9202B104BBFF692 /* Pods-MVVMR_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Tests.release.xcconfig"; path = "Target Support Files/Pods-MVVMR_Tests/Pods-MVVMR_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +93,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B8C8994246F06C600E7073D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C8A0F246F166500E7073D /* Register */,
+				3B8C8A06246F12CA00E7073D /* Login */,
+				3B8C8997246F06E600E7073D /* Dashboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3B8C8997246F06E600E7073D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C8999246F071800E7073D /* DashboardViewController.swift */,
+				3B8C899B246F075100E7073D /* DashboardViewModel.swift */,
+				3B8C899D246F077700E7073D /* DashboardRouter.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		3B8C8998246F06FB00E7073D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C898E246F062800E7073D /* AppCoordinator.swift */,
+				3B8C8992246F06A200E7073D /* AppRouter.swift */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3B8C8A06246F12CA00E7073D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C8A07246F12EC00E7073D /* LoginRouter.swift */,
+				3B8C8A08246F12EC00E7073D /* LoginViewController.storyboard */,
+				3B8C8A09246F12EC00E7073D /* LoginViewController.swift */,
+				3B8C8A0A246F12EC00E7073D /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3B8C8A0F246F166500E7073D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C8A10246F168B00E7073D /* RegisterRouter.swift */,
+				3B8C8A11246F168B00E7073D /* RegisterViewController.swift */,
+				3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */,
+				3B8C8A13246F168B00E7073D /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +169,8 @@
 		607FACD21AFB9204008FA782 /* Example for MVVMR */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				3B8C8998246F06FB00E7073D /* App */,
+				3B8C8994246F06C600E7073D /* Scenes */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -147,7 +223,6 @@
 				D6840B7DCFA8A34B1D965E5B /* Pods-MVVMR_Tests.debug.xcconfig */,
 				D5AAC509C9202B104BBFF692 /* Pods-MVVMR_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,23 +284,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1140;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1140;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "MVVMR" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -248,6 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				3B8C8A17246F168B00E7073D /* RegisterViewController.xib in Resources */,
+				3B8C8A0C246F12EC00E7073D /* LoginViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -352,8 +429,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				3B8C8993246F06A200E7073D /* AppRouter.swift in Sources */,
+				3B8C8A15246F168B00E7073D /* RegisterViewController.swift in Sources */,
+				3B8C8A14246F168B00E7073D /* RegisterRouter.swift in Sources */,
+				3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */,
+				3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */,
+				3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */,
+				3B8C8A0D246F12EC00E7073D /* LoginViewController.swift in Sources */,
+				3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				3B8C8A0B246F12EC00E7073D /* LoginRouter.swift in Sources */,
+				3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */,
+				3B8C8A0E246F12EC00E7073D /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,12 +494,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -460,12 +549,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -505,7 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -520,7 +611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -541,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMR_Example.app/MVVMR_Example";
 			};
 			name = Debug;
@@ -559,7 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMR_Example.app/MVVMR_Example";
 			};
 			name = Release;

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
+	<key>Description</key>
+	<string>An MVVMR Scene</string>
+	<key>Summary</key>
+	<string>An MVVMR Scene</string>
+	<key>SortOrder</key>
+	<string>30</string>
+	<key>AllowedTypes</key>
+	<array>
+		<string>public.swift-source</string>
+	</array>
+	<key>DefaultCompletionName</key>
+	<string>Scene</string>
+	<key>MainTemplateFile</key>
+	<string>___FILEBASENAME___</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>productName</string>
+			<key>Required</key>
+			<string>true</string>
+			<key>Name</key>
+			<string>Scene name:</string>
+			<key>Description</key>
+			<string>The name of the Scene to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>NotPersisted</key>
+			<string>true</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>withXIB</string>
+			<key>Required</key>
+			<string>true</string>
+			<key>Name</key>
+			<string>Add XIB file</string>
+			<key>Description</key>
+			<string>Whether this scene contains a XIB</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>NotPersisted</key>
+			<string>true</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>withStoryboard</key>
+				<string>false</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>withStoryboard</string>
+			<key>Required</key>
+			<string>true</string>
+			<key>Name</key>
+			<string>Add Storyboard file</string>
+			<key>Description</key>
+			<string>Whether this scene contains a Storyboard</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>NotPersisted</key>
+			<string>true</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>withXIB</key>
+				<string>false</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
