@@ -21,7 +21,7 @@ pod 'MVVMR'
 
 ## Author
 
-Alin Radut, alin.claudiu.radut@gmail.com
+Alin Radut
 
 ## License
 
