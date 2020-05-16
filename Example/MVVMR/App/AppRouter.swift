@@ -19,7 +19,8 @@ struct AppRouter: Router {
     typealias R = Routes
     
     enum Routes: Route {
-        case mainScreen(NSNumber)
+        case login
+        case dashboard
         
         var navigationStyle: NavigationStyle {
             return .push
@@ -27,8 +28,10 @@ struct AppRouter: Router {
         
         func navigate(on parentController: UIViewController?) {
             switch self {
-            case .mainScreen(let number):
-                Scene<DashboardViewController>.show(on: parentController, navigationStyle: navigationStyle) { $0.setContext(context: number) }
+            case .login:
+                Scene<LoginViewController>.show(on: parentController)
+            case .dashboard:
+                Scene<DashboardViewController>.show(on: parentController, navigationStyle: navigationStyle) 
             }
         }
     }

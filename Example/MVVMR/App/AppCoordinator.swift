@@ -22,15 +22,13 @@ class AppCoordinator {
     
     init(window: UIWindow) {
         self.window = window
-        if window.rootViewController == nil {
-            window.rootViewController = UINavigationController()
-        }
+        window.rootViewController = UINavigationController()
         router = AppRouter(parentController: window.rootViewController!, transition: NavigationStyle.push.transition)
         start()
     }
     
     func start() {
-        router.navigate(to: .mainScreen(1))
+        router.navigate(to: CurrentUser.isLoggedIn ? .dashboard : .login)
     }
 }
 

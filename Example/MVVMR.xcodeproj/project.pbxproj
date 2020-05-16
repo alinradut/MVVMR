@@ -12,14 +12,15 @@
 		3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8999246F071800E7073D /* DashboardViewController.swift */; };
 		3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C899B246F075100E7073D /* DashboardViewModel.swift */; };
 		3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C899D246F077700E7073D /* DashboardRouter.swift */; };
-		3B8C8A0B246F12EC00E7073D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A07246F12EC00E7073D /* LoginRouter.swift */; };
-		3B8C8A0C246F12EC00E7073D /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A08246F12EC00E7073D /* LoginViewController.storyboard */; };
-		3B8C8A0D246F12EC00E7073D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A09246F12EC00E7073D /* LoginViewController.swift */; };
-		3B8C8A0E246F12EC00E7073D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A0A246F12EC00E7073D /* LoginViewModel.swift */; };
 		3B8C8A14246F168B00E7073D /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A10246F168B00E7073D /* RegisterRouter.swift */; };
 		3B8C8A15246F168B00E7073D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A11246F168B00E7073D /* RegisterViewController.swift */; };
 		3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */; };
 		3B8C8A17246F168B00E7073D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A13246F168B00E7073D /* RegisterViewController.xib */; };
+		3B8C8A24246F286C00E7073D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A20246F286C00E7073D /* LoginRouter.swift */; };
+		3B8C8A25246F286C00E7073D /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A21246F286C00E7073D /* LoginViewController.storyboard */; };
+		3B8C8A26246F286C00E7073D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A22246F286C00E7073D /* LoginViewController.swift */; };
+		3B8C8A27246F286C00E7073D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A23246F286C00E7073D /* LoginViewModel.swift */; };
+		3B8C8A2A246F2A7C00E7073D /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A29246F2A7C00E7073D /* CurrentUser.swift */; };
 		59D2ECAA274ED6E20DA26647 /* Pods_MVVMR_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD49935C8AEC04A0F04C30DE /* Pods_MVVMR_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -47,14 +48,15 @@
 		3B8C8999246F071800E7073D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		3B8C899B246F075100E7073D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3B8C899D246F077700E7073D /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
-		3B8C8A07246F12EC00E7073D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		3B8C8A08246F12EC00E7073D /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
-		3B8C8A09246F12EC00E7073D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3B8C8A0A246F12EC00E7073D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3B8C8A10246F168B00E7073D /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		3B8C8A11246F168B00E7073D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		3B8C8A13246F168B00E7073D /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		3B8C8A20246F286C00E7073D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		3B8C8A21246F286C00E7073D /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		3B8C8A22246F286C00E7073D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3B8C8A23246F286C00E7073D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3B8C8A29246F2A7C00E7073D /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3E0F47B2204720DD00862C13 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		457C677B06E6EDDC399E31D6 /* Pods-MVVMR_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Example.release.xcconfig"; path = "Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MVVMR_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMR_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +98,8 @@
 		3B8C8994246F06C600E7073D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3B8C8A1F246F282300E7073D /* Login */,
 				3B8C8A0F246F166500E7073D /* Register */,
-				3B8C8A06246F12CA00E7073D /* Login */,
 				3B8C8997246F06E600E7073D /* Dashboard */,
 			);
 			path = Scenes;
@@ -123,17 +125,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		3B8C8A06246F12CA00E7073D /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				3B8C8A07246F12EC00E7073D /* LoginRouter.swift */,
-				3B8C8A08246F12EC00E7073D /* LoginViewController.storyboard */,
-				3B8C8A09246F12EC00E7073D /* LoginViewController.swift */,
-				3B8C8A0A246F12EC00E7073D /* LoginViewModel.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		3B8C8A0F246F166500E7073D /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +134,25 @@
 				3B8C8A13246F168B00E7073D /* RegisterViewController.xib */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		3B8C8A1F246F282300E7073D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C8A20246F286C00E7073D /* LoginRouter.swift */,
+				3B8C8A21246F286C00E7073D /* LoginViewController.storyboard */,
+				3B8C8A22246F286C00E7073D /* LoginViewController.swift */,
+				3B8C8A23246F286C00E7073D /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3B8C8A28246F2A5300E7073D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B8C8A29246F2A7C00E7073D /* CurrentUser.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -169,6 +179,7 @@
 		607FACD21AFB9204008FA782 /* Example for MVVMR */ = {
 			isa = PBXGroup;
 			children = (
+				3B8C8A28246F2A5300E7073D /* Models */,
 				3B8C8998246F06FB00E7073D /* App */,
 				3B8C8994246F06C600E7073D /* Scenes */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -324,7 +335,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				3B8C8A17246F168B00E7073D /* RegisterViewController.xib in Resources */,
-				3B8C8A0C246F12EC00E7073D /* LoginViewController.storyboard in Resources */,
+				3B8C8A25246F286C00E7073D /* LoginViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -435,12 +446,13 @@
 				3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */,
 				3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */,
 				3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */,
-				3B8C8A0D246F12EC00E7073D /* LoginViewController.swift in Sources */,
 				3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				3B8C8A0B246F12EC00E7073D /* LoginRouter.swift in Sources */,
+				3B8C8A27246F286C00E7073D /* LoginViewModel.swift in Sources */,
+				3B8C8A24246F286C00E7073D /* LoginRouter.swift in Sources */,
 				3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */,
-				3B8C8A0E246F12EC00E7073D /* LoginViewModel.swift in Sources */,
+				3B8C8A26246F286C00E7073D /* LoginViewController.swift in Sources */,
+				3B8C8A2A246F2A7C00E7073D /* CurrentUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

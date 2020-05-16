@@ -41,8 +41,6 @@
 		3B8C89D3246F093800E7073D /* RouterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C89C5246F093700E7073D /* RouterBuilder.swift */; };
 		3B8C89D5246F093800E7073D /* MVVMR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C89C8246F093800E7073D /* MVVMR.swift */; };
 		3B8C89D6246F093800E7073D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C89C9246F093800E7073D /* ViewController.swift */; };
-		3B8C8A1D246F17BD00E7073D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A1A246F17BD00E7073D /* .gitkeep */; };
-		3B8C8A1E246F17BD00E7073D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C8A1C246F17BD00E7073D /* .gitkeep */; };
 		3CFD5091F02F30ADE4EEC622C7F487C8 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001FF222EA83335C3B8DDC5074A862C7 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		3D317145F0CA3D74E737AB0B919AB6E9 /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6663844FD8AC4A8EFE4F009F43DE62 /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		405AB644E5E32AB19AE8697B4C0CE124 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4255BD03AA0B39A2239DF75D25247ADB /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -938,8 +936,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B8C8A1D246F17BD00E7073D /* .gitkeep in Resources */,
-				3B8C8A1E246F17BD00E7073D /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

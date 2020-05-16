@@ -8,8 +8,15 @@
 
 import Foundation
 import MVVMR
+//import SimpleTwoWayBinding
 
 struct LoginViewModel: ViewModel {
     
     var router: LoginRouter?
+//    let username: Observable<String> = .init()
+//    let password: Observable<String> = .init()
+    
+    func onRegister() {
+        router?.navigate(to: .register)
+    }
 }
