@@ -35,7 +35,10 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwN-Vr-gzu">
                                                 <rect key="frame" x="88.5" y="0.0" width="266.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="vKn-9P-Ny8" id="J9t-qD-KFU"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -51,13 +54,19 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-0P-LpD">
                                                 <rect key="frame" x="88.5" y="0.0" width="266.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="vKn-9P-Ny8" id="1dH-WS-Hqp"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwe-Lm-xlR">
                                         <rect key="frame" x="0.0" y="176" width="355" height="30"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="onLoginBtnTapped" destination="vKn-9P-Ny8" eventType="touchUpInside" id="KHv-4n-xDL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47o-34-A1b">
                                         <rect key="frame" x="0.0" y="216" width="355" height="30"/>

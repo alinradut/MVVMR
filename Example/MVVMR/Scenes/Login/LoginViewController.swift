@@ -8,7 +8,7 @@
 
 import Foundation
 import MVVMR
-//import SimpleTwoWayBinding
+import SimpleTwoWayBinding
 
 class LoginViewController: UIViewController, ViewController, StoryboardInstantiable {
     
@@ -25,13 +25,31 @@ class LoginViewController: UIViewController, ViewController, StoryboardInstantia
     }
     
     private func bindViewModel() {
-//        usernameTextField.bind(with: viewModel.username)
-//        passwordTextField.bind(with: viewModel.password)
+        usernameTextField.bind(with: viewModel.username)
+        passwordTextField.bind(with: viewModel.password)
     }
 }
 
 extension LoginViewController {
     @IBAction func onRegisterBtnTapped() {
         viewModel.onRegister()
+    }
+    
+    @IBAction func onLoginBtnTapped() {
+        viewModel.onLogin()
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+            return false
+        }
+        else if textField == passwordTextField {
+            onLoginBtnTapped()
+            passwordTextField.resignFirstResponder()
+        }
+        return true
     }
 }
