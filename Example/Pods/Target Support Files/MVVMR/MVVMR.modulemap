@@ -1,6 +1,0 @@
-framework module MVVMR {
-  umbrella header "MVVMR-umbrella.h"
-
-  export *
-  module * { export * }
-}
