@@ -9,6 +9,6 @@
 import Foundation
 import MVVMR
 
-class RegisterViewController: UITableViewController, ViewController, NibInstantiable {
+class RegisterViewController: UIViewController, ViewController, NibInstantiable {
     var viewModel: RegisterViewModel!
 }

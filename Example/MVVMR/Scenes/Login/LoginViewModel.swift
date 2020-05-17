@@ -10,20 +10,51 @@ import Foundation
 import MVVMR
 import SimpleTwoWayBinding
 
-struct LoginViewModel: ViewModel {
+class LoginViewModel: ViewModel {
     
     var router: LoginRouter?
     let username: Observable<String> = .init()
     let password: Observable<String> = .init()
+    let isValid: Observable<Bool>
+    let isWorking: Observable<Bool> = .init(false)
     
-    init() {
-        username.bind { (observable, value) in
-            print("username: \(value)")
-        }
+    private var networkService: NetworkService = FakeNetworkService()
+    
+    required init() {
+        isValid = zip(username, password).map { (username, password) -> Bool in
+            guard let username = username, !username.isEmpty else {
+                return false
+            }
+            guard let password = password, !password.isEmpty else {
+                return false
+            }
+            return true
+        }.distinct()
     }
     
     func onLogin() {
-        print("\(username.value)")
+
+        guard let username = username.value, !username.isEmpty else {
+            router?.navigate(to: .errorAlert(title: "Error", message: "Please enter a username"))
+            return
+        }
+        
+        guard let password = password.value, !password.isEmpty else {
+            router?.navigate(to: .errorAlert(title: "Error", message: "Please enter a password"))
+            return
+        }
+        
+        isWorking.value = true
+        networkService.login(username: username, password: password) { [weak self] (result) in
+            self?.isWorking.value = false
+            switch result {
+            case .failure(let error):
+                self?.router?.navigate(to: .errorAlert(title: "Error", message: error.localizedDescription))
+            case .success(let authToken):
+                CurrentUser.profile = Profile(username: username, password: password, authToken: authToken)
+                self?.router?.navigate(to: .dashboard)
+            }
+        }
     }
     
     func onRegister() {

@@ -11,4 +11,11 @@ import MVVMR
 
 class DashboardViewController: UIViewController, ViewController {
     var viewModel: DashboardViewModel!
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view = UIView()
+        view.backgroundColor = .red
+    }
 }

@@ -27,6 +27,14 @@ class LoginViewController: UIViewController, ViewController, StoryboardInstantia
     private func bindViewModel() {
         usernameTextField.bind(with: viewModel.username)
         passwordTextField.bind(with: viewModel.password)
+        
+        viewModel.isValid.bindUI(replay: true) { [weak self] (isValid) in
+            self?.loginButton.isEnabled = isValid
+        }
+        
+        viewModel.isWorking.bindUI { (isWorking) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isWorking
+        }
     }
 }
 

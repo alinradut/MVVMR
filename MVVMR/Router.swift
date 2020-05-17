@@ -19,6 +19,8 @@ public enum NavigationStyle {
     // Will call `associatedController.present`
     case modal
     
+    case replace
+    
     // A custom presentation based on the associated transition.
     case custom(Transition)
     
@@ -29,6 +31,8 @@ public enum NavigationStyle {
             return PushTransition()
         case .modal:
             return ModalTransition()
+        case .replace:
+            return ReplaceTransition()
         case .custom(let transition):
             return transition
         }

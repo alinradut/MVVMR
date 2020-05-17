@@ -3,6 +3,7 @@ use_frameworks!
 target 'MVVMR_Example' do
   pod 'MVVMR', :path => '../'
   pod 'SimpleTwoWayBinding', :git => 'https://github.com/alinradut/SimpleTwoWayBindingIOS.git'
+  pod 'MBProgressHUD'
 
   target 'MVVMR_Tests' do
     inherit! :search_paths

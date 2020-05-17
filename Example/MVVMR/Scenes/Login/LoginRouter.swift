@@ -23,11 +23,21 @@ struct LoginRouter: Router {
     enum Routes: Route {
         
         case register
+        case errorAlert(title: String, message: String)
+        case dashboard
         
         func navigate(on parentController: UIViewController?) {
             switch self {
             case .register:
                 Scene<RegisterViewController>.show(on: parentController)
+            case .errorAlert(let title, let message):
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alert.addAction(.init(title: "OK", style: .default, handler: nil))
+                let transition = ModalTransition()
+                transition.sourceController = parentController
+                transition.run(to: alert)
+            case .dashboard:
+                Scene<DashboardViewController>.show(on: parentController, navigationStyle: .replace)
             default:
                 break
             }

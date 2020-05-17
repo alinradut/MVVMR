@@ -10,6 +10,14 @@ import Foundation
 
 class CurrentUser {
     static var isLoggedIn: Bool {
-        return false
+        return profile != nil
     }
+    
+    static var profile: Profile?
+}
+
+struct Profile {
+    var username: String
+    var password: String
+    var authToken: String
 }

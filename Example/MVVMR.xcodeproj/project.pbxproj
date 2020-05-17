@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B00CD7924714935004D805C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00CD7824714935004D805C /* NetworkService.swift */; };
 		3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C898E246F062800E7073D /* AppCoordinator.swift */; };
 		3B8C8993246F06A200E7073D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8992246F06A200E7073D /* AppRouter.swift */; };
 		3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8999246F071800E7073D /* DashboardViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		25656787A348672C38DD131A /* Pods_MVVMR_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC62DD9844BC29E23AAB6F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3B00CD7824714935004D805C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3B8C898E246F062800E7073D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3B8C8992246F06A200E7073D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		3B8C8999246F071800E7073D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B00CD7624714906004D805C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B00CD7724714919004D805C /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3B00CD7724714919004D805C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3B00CD7824714935004D805C /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3B8C8994246F06C600E7073D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +197,7 @@
 		607FACD21AFB9204008FA782 /* Example for MVVMR */ = {
 			isa = PBXGroup;
 			children = (
+				3B00CD7624714906004D805C /* Services */,
 				3B8C8A28246F2A5300E7073D /* Models */,
 				3B8C8998246F06FB00E7073D /* App */,
 				3B8C8994246F06C600E7073D /* Scenes */,
@@ -358,11 +377,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MVVMR/MVVMR.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleTwoWayBinding/SimpleTwoWayBinding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVMR.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleTwoWayBinding.framework",
 			);
@@ -448,6 +469,7 @@
 				3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */,
 				3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */,
 				3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */,
+				3B00CD7924714935004D805C /* NetworkService.swift in Sources */,
 				3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				3B8C8A27246F286C00E7073D /* LoginViewModel.swift in Sources */,
