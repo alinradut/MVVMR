@@ -2,20 +2,24 @@
 //  DashboardViewController.swift
 //  MVVMR_Example
 //
-//  Created by Alin Radut on 15/05/2020.
+//  Created by Alin Radut on 18/05/2020.
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
 import Foundation
 import MVVMR
 
-class DashboardViewController: UIViewController, ViewController {
+class DashboardViewController: UICollectionViewController, ViewController, StoryboardInstantiable {
+    
     var viewModel: DashboardViewModel!
     
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.view = UIView()
-        view.backgroundColor = .red
+        bindViewModel()
+    }
+    
+    func bindViewModel() {
+        
     }
 }

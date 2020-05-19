@@ -5,5 +5,15 @@ import MVVMR
 
 class ___VARIABLE_productName___ViewController: UIViewController, ViewController, NibInstantiable {
     
-    var viewModel: ___VARIABLE_productName___ViewModel!
+    private var viewModel: ___VARIABLE_productName___ViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        
+    }
 }

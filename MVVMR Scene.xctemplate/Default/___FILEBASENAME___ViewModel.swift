@@ -6,14 +6,4 @@ import MVVMR
 struct ___VARIABLE_productName___ViewModel: ViewModel {
     
     var router: ___VARIABLE_productName___Router?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        bindViewModel()
-    }
-    
-    func bindViewModel() {
-        
-    }
 }

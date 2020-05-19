@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3B00CD7924714935004D805C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00CD7824714935004D805C /* NetworkService.swift */; };
+		3B11628A24728A670070F260 /* RxNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11628924728A670070F260 /* RxNetworkService.swift */; };
+		3B11628F2472B7790070F260 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11628B2472B7790070F260 /* DashboardRouter.swift */; };
+		3B1162902472B7790070F260 /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B11628C2472B7790070F260 /* DashboardViewController.storyboard */; };
+		3B1162912472B7790070F260 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11628D2472B7790070F260 /* DashboardViewController.swift */; };
+		3B1162922472B7790070F260 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11628E2472B7790070F260 /* DashboardViewModel.swift */; };
+		3B1162952472B8F30070F260 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1162942472B8F30070F260 /* DashboardCell.swift */; };
 		3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C898E246F062800E7073D /* AppCoordinator.swift */; };
 		3B8C8993246F06A200E7073D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8992246F06A200E7073D /* AppRouter.swift */; };
-		3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8999246F071800E7073D /* DashboardViewController.swift */; };
-		3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C899B246F075100E7073D /* DashboardViewModel.swift */; };
-		3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C899D246F077700E7073D /* DashboardRouter.swift */; };
 		3B8C8A14246F168B00E7073D /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A10246F168B00E7073D /* RegisterRouter.swift */; };
 		3B8C8A15246F168B00E7073D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A11246F168B00E7073D /* RegisterViewController.swift */; };
 		3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */; };
@@ -45,11 +48,14 @@
 		25656787A348672C38DD131A /* Pods_MVVMR_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC62DD9844BC29E23AAB6F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3B00CD7824714935004D805C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3B11628924728A670070F260 /* RxNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNetworkService.swift; sourceTree = "<group>"; };
+		3B11628B2472B7790070F260 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		3B11628C2472B7790070F260 /* DashboardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
+		3B11628D2472B7790070F260 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		3B11628E2472B7790070F260 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		3B1162942472B8F30070F260 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		3B8C898E246F062800E7073D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3B8C8992246F06A200E7073D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		3B8C8999246F071800E7073D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		3B8C899B246F075100E7073D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		3B8C899D246F077700E7073D /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		3B8C8A10246F168B00E7073D /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		3B8C8A11246F168B00E7073D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3B8C8A12246F168B00E7073D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -109,8 +115,17 @@
 			isa = PBXGroup;
 			children = (
 				3B00CD7824714935004D805C /* NetworkService.swift */,
+				3B11628924728A670070F260 /* RxNetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3B1162932472B8E70070F260 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3B1162942472B8F30070F260 /* DashboardCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3B8C8994246F06C600E7073D /* Scenes */ = {
@@ -126,9 +141,11 @@
 		3B8C8997246F06E600E7073D /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				3B8C8999246F071800E7073D /* DashboardViewController.swift */,
-				3B8C899B246F075100E7073D /* DashboardViewModel.swift */,
-				3B8C899D246F077700E7073D /* DashboardRouter.swift */,
+				3B1162932472B8E70070F260 /* Cells */,
+				3B11628B2472B7790070F260 /* DashboardRouter.swift */,
+				3B11628C2472B7790070F260 /* DashboardViewController.storyboard */,
+				3B11628D2472B7790070F260 /* DashboardViewController.swift */,
+				3B11628E2472B7790070F260 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -352,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1162902472B7790070F260 /* DashboardViewController.storyboard in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				3B8C8A17246F168B00E7073D /* RegisterViewController.xib in Resources */,
 				3B8C8A25246F286C00E7073D /* LoginViewController.storyboard in Resources */,
@@ -377,14 +395,22 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MVVMR/MVVMR.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleTwoWayBinding/SimpleTwoWayBinding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVMR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleTwoWayBinding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,19 +490,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8C8993246F06A200E7073D /* AppRouter.swift in Sources */,
+				3B1162912472B7790070F260 /* DashboardViewController.swift in Sources */,
 				3B8C8A15246F168B00E7073D /* RegisterViewController.swift in Sources */,
 				3B8C8A14246F168B00E7073D /* RegisterRouter.swift in Sources */,
-				3B8C899E246F077700E7073D /* DashboardRouter.swift in Sources */,
-				3B8C899C246F075100E7073D /* DashboardViewModel.swift in Sources */,
 				3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */,
 				3B00CD7924714935004D805C /* NetworkService.swift in Sources */,
+				3B1162952472B8F30070F260 /* DashboardCell.swift in Sources */,
+				3B1162922472B7790070F260 /* DashboardViewModel.swift in Sources */,
 				3B8C8A16246F168B00E7073D /* RegisterViewModel.swift in Sources */,
+				3B11628A24728A670070F260 /* RxNetworkService.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				3B8C8A27246F286C00E7073D /* LoginViewModel.swift in Sources */,
 				3B8C8A24246F286C00E7073D /* LoginRouter.swift in Sources */,
-				3B8C899A246F071800E7073D /* DashboardViewController.swift in Sources */,
 				3B8C8A26246F286C00E7073D /* LoginViewController.swift in Sources */,
 				3B8C8A2A246F2A7C00E7073D /* CurrentUser.swift in Sources */,
+				3B11628F2472B7790070F260 /* DashboardRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
