@@ -3,7 +3,11 @@
 import Foundation
 import MVVMR
 
-struct ___VARIABLE_productName___ViewModel: ViewModel {
+public struct ___VARIABLE_productName___ViewModel: ViewModel {
     
-    var router: ___VARIABLE_productName___Router?
+    public var router: ___VARIABLE_productName___Router?
+    
+    public init() {
+        
+    }
 }
