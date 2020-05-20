@@ -6,7 +6,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Copy RIBs file templates into the local RIBs template directory
 xcodeTemplate () {
-  echo "==> Copying up RIBs Xcode file templates..."
+  echo "==> Copying up Xcode file templates..."
 
   if [ -d "$XCODE_TEMPLATE_DIR" ]; then
     rm -R "$XCODE_TEMPLATE_DIR"

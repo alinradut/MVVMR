@@ -7,7 +7,7 @@ public class ___VARIABLE_productName___ViewController: UIViewController, ViewCon
     
     public var viewModel: ___VARIABLE_productName___ViewModel!
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         bindViewModel()
