@@ -38,7 +38,7 @@ public protocol NibInstantiable {
     static func fromNib<VC: UIViewController>() -> VC
 }
 
-public extension StoryboardInstantiable {
+public extension StoryboardInstantiable where Self: UIViewController {
     
     static var storyboardName: String {
         if ownsStoryboard {
@@ -48,7 +48,7 @@ public extension StoryboardInstantiable {
     }
     
     static var storyboard: UIStoryboard {
-        return UIStoryboard(name: storyboardName, bundle: nil)
+        return UIStoryboard(name: storyboardName, bundle: Bundle(for: self))
     }
     
     static var storyboardIdentifier: String {
@@ -71,13 +71,14 @@ public extension StoryboardInstantiable {
     }
 }
 
-public extension NibInstantiable {
+public extension NibInstantiable where Self: UIViewController {
     
     static var nibName: String {
         return String(describing: self)
     }
     
     static func fromNib<VC: UIViewController>() -> VC {
-        return VC.init(nibName: nibName, bundle: nil)
+        return VC.init(nibName: nibName, bundle: Bundle(for: self))
     }
 }
+
