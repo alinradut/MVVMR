@@ -16,7 +16,7 @@ struct AppRouter: Router {
     var presentationTransition: Transition?
     var parentController: UIViewController?
     
-    typealias R = Routes
+    typealias RouteType = Routes
     
     enum Routes: Route {
         case login

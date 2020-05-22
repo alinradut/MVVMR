@@ -18,7 +18,7 @@ struct DashboardRouter: Router {
     /// we might want to reverse that transition at one point.
     var presentationTransition: Transition?
     
-    typealias R = Routes
+    typealias RouteType = Routes
     
     enum Routes: Route {
         func navigate(on parentController: UIViewController?) {

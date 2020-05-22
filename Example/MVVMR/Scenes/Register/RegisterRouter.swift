@@ -14,7 +14,7 @@ struct RegisterRouter: Router {
     
     var presentationTransition: Transition?
     
-    typealias R = Routes
+    typealias RouteType = Routes
     
     enum Routes: Route {
         case dashboard

@@ -50,7 +50,7 @@ public protocol Route {
 
 public protocol Router {
     
-    associatedtype R: Route
+    associatedtype RouteType: Route
     
     /// The controller this router and it's related view controller were presented on.
     var parentController: UIViewController? { get set }
@@ -69,7 +69,7 @@ public protocol Router {
     /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
     /// If you need to pass a context to the target viewcontroller, do so via the `navigate(to:context:)` method.
     /// - Parameter route: Route
-    func navigate(to route: R)
+    func navigate(to route: RouteType)
     
     /// Go back by reversing the presentation transition.
     func navigateBack()
@@ -91,7 +91,7 @@ public extension Router {
     /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
     /// If you need to pass a context to the target viewcontroller, do so via the `navigate(to:context:)` method.
     /// - Parameter route: Route
-    func navigate(to route: R) {
+    func navigate(to route: RouteType) {
         route.navigate(on: parentController)
     }
     

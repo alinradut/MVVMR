@@ -18,9 +18,9 @@ struct LoginRouter: Router {
     /// we might want to reverse that transition at one point.
     var presentationTransition: Transition?
     
-    typealias R = Routes
+    typealias RouteType = Route
     
-    enum Routes: Route {
+    enum Route: MVVMR.Route {
         
         case register
         case errorAlert(title: String, message: String)

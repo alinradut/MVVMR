@@ -14,6 +14,7 @@
 		3B1162912472B7790070F260 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11628D2472B7790070F260 /* DashboardViewController.swift */; };
 		3B1162922472B7790070F260 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11628E2472B7790070F260 /* DashboardViewModel.swift */; };
 		3B1162952472B8F30070F260 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1162942472B8F30070F260 /* DashboardCell.swift */; };
+		3B2817E52477EE56005D414D /* MVVMR Scene.xctemplate in Resources */ = {isa = PBXBuildFile; fileRef = 3B2817E42477EE56005D414D /* MVVMR Scene.xctemplate */; };
 		3B8C8990246F062800E7073D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C898E246F062800E7073D /* AppCoordinator.swift */; };
 		3B8C8993246F06A200E7073D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8992246F06A200E7073D /* AppRouter.swift */; };
 		3B8C8A14246F168B00E7073D /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C8A10246F168B00E7073D /* RegisterRouter.swift */; };
@@ -54,6 +55,7 @@
 		3B11628D2472B7790070F260 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		3B11628E2472B7790070F260 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3B1162942472B8F30070F260 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
+		3B2817E42477EE56005D414D /* MVVMR Scene.xctemplate */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "MVVMR Scene.xctemplate"; path = "../MVVMR Scene.xctemplate"; sourceTree = "<group>"; };
 		3B8C898E246F062800E7073D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3B8C8992246F06A200E7073D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		3B8C8A10246F168B00E7073D /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				3B2817E42477EE56005D414D /* MVVMR Scene.xctemplate */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for MVVMR */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -371,6 +374,7 @@
 			files = (
 				3B1162902472B7790070F260 /* DashboardViewController.storyboard in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				3B2817E52477EE56005D414D /* MVVMR Scene.xctemplate in Resources */,
 				3B8C8A17246F168B00E7073D /* RegisterViewController.xib in Resources */,
 				3B8C8A25246F286C00E7073D /* LoginViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
