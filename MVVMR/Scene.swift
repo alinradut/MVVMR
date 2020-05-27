@@ -38,7 +38,7 @@ public struct Scene<VC: ViewController & UIViewController> {
         scene.router.presentationTransition?.run(to: scene.viewController)
     }
     
-    public static func build(parentController: UIViewController?, navigationStyle: NavigationStyle = .push, setContext: ((VC.VM) -> Void)? = nil) -> Scene {
+    public static func build(parentController: UIViewController? = nil, navigationStyle: NavigationStyle = .push, setContext: ((VC.VM) -> Void)? = nil) -> Scene {
         let scene = Self.init(parentController: parentController, transition: navigationStyle.transition, setContext: setContext)
         return scene
     }
