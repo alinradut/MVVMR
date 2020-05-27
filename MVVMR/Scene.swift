@@ -8,10 +8,10 @@
 import UIKit
 
 public struct Scene<VC: ViewController & UIViewController> {
-    private(set) var viewController: VC
-    private(set) var viewModel: VC.VM
-    private(set) var router: VC.VM.R
-    private(set) var parentController: UIViewController?
+    public private(set) var viewController: VC
+    public private(set) var viewModel: VC.VM
+    public private(set) var router: VC.VM.R
+    public private(set) var parentController: UIViewController?
     
     init(parentController: UIViewController?, transition: Transition, setContext: ((VC.VM) -> Void)? = nil) {
         router = VC.VM.R.resolve(parentController: parentController, transition: transition)
