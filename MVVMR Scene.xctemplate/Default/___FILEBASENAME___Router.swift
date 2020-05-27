@@ -12,7 +12,7 @@ public struct ___VARIABLE_productName___Router: Router {
     /// we might want to reverse that transition at one point.
     public var presentationTransition: Transition?
     
-    public typealias R = Routes
+    public typealias RouteType = Routes
     
     public enum Routes: Route {
         public func navigate(on parentController: UIViewController?) {
