@@ -22,19 +22,19 @@ public class ViewControllerBuilder {
     }
     
     public func build<VC: ViewController & UIViewController>(context: Any? = nil, parentController: UIViewController, transition: Transition) -> VC {
-        let router: VC.VM.R = .resolve(parentController: parentController, transition: transition)
+        let router: VC.ViewModelType.RouterType = .resolve(parentController: parentController, transition: transition)
         
         return build(context: context, router: router)
     }
     
-    public func build<VC: ViewController & UIViewController>(context: Any? = nil, router: VC.VM.R) -> VC {
-        let viewModel: VC.VM = .resolve(router: router, builder: viewModelBuilder)
+    public func build<VC: ViewController & UIViewController>(context: Any? = nil, router: VC.ViewModelType.RouterType) -> VC {
+        let viewModel: VC.ViewModelType = .resolve(router: router, builder: viewModelBuilder)
         viewModel.setContext(context: context)
         
         return build(viewModel: viewModel)
     }
     
-    public func build<VC: ViewController & UIViewController>(viewModel: VC.VM) -> VC {
+    public func build<VC: ViewController & UIViewController>(viewModel: VC.ViewModelType) -> VC {
         let viewController: VC = .resolve()
         viewController.inject(viewModel: viewModel)
         

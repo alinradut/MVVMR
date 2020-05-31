@@ -10,17 +10,17 @@ import Foundation
 
 public protocol ViewModel {
 
-    associatedtype R: Router
-    var router: R? { get set }
+    associatedtype RouterType: Router
+    var router: RouterType? { get set }
 
     init()
-    init(_ router: R?)
+    init(_ router: RouterType?)
     func setContext(context: Any?)
 }
 
 public extension ViewModel {
     
-    init(_ router: R?) {
+    init(_ router: RouterType?) {
         self.init()
         self.router = router
     }
@@ -31,7 +31,7 @@ public extension ViewModel {
 }
 
 extension ViewModel {
-    static func resolve(router: R, builder: ViewModelBuilder = .default) -> Self {
+    static func resolve(router: RouterType, builder: ViewModelBuilder = .default) -> Self {
         return builder.build(router: router)
     }
 }

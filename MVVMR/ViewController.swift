@@ -11,15 +11,15 @@ import UIKit
 
 public protocol ViewController: class {
 
-    associatedtype VM: ViewModel
-    var viewModel: VM! { get set }
+    associatedtype ViewModelType: ViewModel
+    var viewModel: ViewModelType! { get set }
     
     init()
 }
 
 extension ViewController where Self: UIViewController {
     
-    public func inject(viewModel: VM) {
+    public func inject(viewModel: ViewModelType) {
         self.viewModel = viewModel
     }
 }

@@ -15,7 +15,7 @@ public class ViewModelBuilder {
     
     public init() {}
 
-    public func build<VM: ViewModel>(context: Any? = nil, router: VM.R) -> VM {
+    public func build<VM: ViewModel>(context: Any? = nil, router: VM.RouterType) -> VM {
         let viewModel = VM.init(router)
         viewModel.setContext(context: context)
         return viewModel
