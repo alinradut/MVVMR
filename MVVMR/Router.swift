@@ -13,14 +13,17 @@ import UIKit
 /// The navigation style to use when displaying a controller.
 public enum NavigationStyle {
     
-    // Will call `associatedController.navigationController?.push(...)`
+    // Will call `navigationController?.push(...)`
     case push
     
-    // Will call `associatedController.present`
+    // Will call `navigationController?.present`
     case modal
     
     // Will replace all view controllers in the navigation controller with the destination controller
     case replace
+    
+    // Will replace the key window's rootViewController
+    case replaceWindowRoot(ReplaceWindowRootTransition.AnimationType)
     
     // A custom presentation based on the associated transition.
     case custom(Transition)
@@ -34,6 +37,8 @@ public enum NavigationStyle {
             return ModalTransition()
         case .replace:
             return ReplaceTransition()
+        case .replaceWindowRoot(let animation):
+            return ReplaceWindowRootTransition(animation)
         case .custom(let transition):
             return transition
         }
@@ -68,9 +73,8 @@ public protocol Router {
     ///   - transition: Presentation transition
     init(navigationController: UINavigationController?, transition: Transition)
 
-    /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
-    /// If you need to pass a context to the target viewcontroller, do so via the `navigate(to:context:)` method.
-    /// - Parameter route: Route
+    /// Navigate to a route. The `route` will be have to handle the navigation in it's `navigate(on:)` method.
+    /// - Parameter route: RouteType
     func navigate(to route: RouteType)
     
     /// Go back by reversing the presentation transition.

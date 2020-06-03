@@ -21,15 +21,14 @@ public class ViewControllerBuilder {
         self.viewModelBuilder = viewModelBuilder
     }
     
-    public func build<VC: ViewController & UIViewController>(context: Any? = nil, navigationController: UINavigationController, transition: Transition) -> VC {
+    public func build<VC: ViewController & UIViewController>(navigationController: UINavigationController, transition: Transition) -> VC {
         let router: VC.ViewModelType.RouterType = .resolve(navigationController: navigationController, transition: transition)
         
-        return build(context: context, router: router)
+        return build(router: router)
     }
     
-    public func build<VC: ViewController & UIViewController>(context: Any? = nil, router: VC.ViewModelType.RouterType) -> VC {
+    public func build<VC: ViewController & UIViewController>(router: VC.ViewModelType.RouterType) -> VC {
         let viewModel: VC.ViewModelType = .resolve(router: router, builder: viewModelBuilder)
-        viewModel.setContext(context: context)
         
         return build(viewModel: viewModel)
     }
