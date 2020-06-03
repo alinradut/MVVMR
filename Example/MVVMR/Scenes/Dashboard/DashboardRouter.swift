@@ -12,7 +12,7 @@ import MVVMR
 struct DashboardRouter: Router {
     
     /// The controller this router and it's related view controller were presented on.
-    weak var parentController: UIViewController?
+    weak var navigationController: UINavigationController?
     
     /// The incoming transition that was used to display this scene. We keep a reference because
     /// we might want to reverse that transition at one point.
@@ -21,7 +21,7 @@ struct DashboardRouter: Router {
     typealias RouteType = Routes
     
     enum Routes: Route {
-        func navigate(on parentController: UIViewController?) {
+        func navigate(on navigationController: UINavigationController?) {
             switch self {
             
             default:

@@ -11,10 +11,10 @@ public struct Scene<VC: ViewController & UIViewController> {
     public private(set) var viewController: VC
     public private(set) var viewModel: VC.ViewModelType
     public private(set) var router: VC.ViewModelType.RouterType
-    public private(set) var parentController: UIViewController?
+    public private(set) var navigationController: UINavigationController?
     
-    init(parentController: UIViewController?, transition: Transition, setContext: ((VC.ViewModelType) -> Void)? = nil) {
-        router = VC.ViewModelType.RouterType.resolve(parentController: parentController, transition: transition)
+    init(navigationController: UINavigationController?, transition: Transition, setContext: ((VC.ViewModelType) -> Void)? = nil) {
+        router = VC.ViewModelType.RouterType.resolve(navigationController: navigationController, transition: transition)
         viewModel = VC.ViewModelType.resolve(router: router)
 
         setContext?(viewModel)
@@ -28,8 +28,8 @@ public struct Scene<VC: ViewController & UIViewController> {
         self.router = router
     }
     
-    public static func show(on parentController: UIViewController?, navigationStyle: NavigationStyle = .push, setContext: ((VC.ViewModelType) -> Void)? = nil) {
-        let scene = Self.build(parentController: parentController, navigationStyle: navigationStyle, setContext: setContext)
+    public static func show(on navigationController: UINavigationController?, navigationStyle: NavigationStyle = .push, setContext: ((VC.ViewModelType) -> Void)? = nil) {
+        let scene = Self.build(navigationController: navigationController, navigationStyle: navigationStyle, setContext: setContext)
         scene.router.presentationTransition?.run(to: scene.viewController)
     }
     
@@ -38,8 +38,8 @@ public struct Scene<VC: ViewController & UIViewController> {
         scene.router.presentationTransition?.run(to: scene.viewController)
     }
     
-    public static func build(parentController: UIViewController? = nil, navigationStyle: NavigationStyle = .push, setContext: ((VC.ViewModelType) -> Void)? = nil) -> Scene {
-        let scene = Self.init(parentController: parentController, transition: navigationStyle.transition, setContext: setContext)
+    public static func build(navigationController: UINavigationController? = nil, navigationStyle: NavigationStyle = .push, setContext: ((VC.ViewModelType) -> Void)? = nil) -> Scene {
+        let scene = Self.init(navigationController: navigationController, transition: navigationStyle.transition, setContext: setContext)
         return scene
     }
 }

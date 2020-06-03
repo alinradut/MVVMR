@@ -21,8 +21,8 @@ public class ViewControllerBuilder {
         self.viewModelBuilder = viewModelBuilder
     }
     
-    public func build<VC: ViewController & UIViewController>(context: Any? = nil, parentController: UIViewController, transition: Transition) -> VC {
-        let router: VC.ViewModelType.RouterType = .resolve(parentController: parentController, transition: transition)
+    public func build<VC: ViewController & UIViewController>(context: Any? = nil, navigationController: UINavigationController, transition: Transition) -> VC {
+        let router: VC.ViewModelType.RouterType = .resolve(navigationController: navigationController, transition: transition)
         
         return build(context: context, router: router)
     }

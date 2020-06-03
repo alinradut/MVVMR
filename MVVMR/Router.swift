@@ -19,6 +19,7 @@ public enum NavigationStyle {
     // Will call `associatedController.present`
     case modal
     
+    // Will replace all view controllers in the navigation controller with the destination controller
     case replace
     
     // A custom presentation based on the associated transition.
@@ -43,17 +44,18 @@ public enum NavigationStyle {
 public protocol Route {
     
     /// Navigate this route. The route is responsible for instantiating the appropriate scene and displaying
-    /// it on the `parentController`.
-    /// - Parameter parentController: The controller on which we should present the associated view controller.
-    func navigate(on parentController: UIViewController?)
+    /// it on the `navigationController`.
+    /// - Parameter navigationController: The controller on which we should present the associated view controller.
+    func navigate(on navigationController: UINavigationController?)
 }
 
 public protocol Router {
     
     associatedtype RouteType: Route
     
-    /// The controller this router and it's related view controller were presented on.
-    var parentController: UIViewController? { get set }
+    /// The controller this router and it's related view controller were presented on. To prevent accidental
+    /// memory leaks, this should be declared as weak.
+    var navigationController: UINavigationController? { get set }
     
     /// The incoming transition that was used to display this scene. We keep a reference because
     /// we might want to reverse that transition at one point.
@@ -63,8 +65,8 @@ public protocol Router {
     /// Initializer
     /// - Parameters:
     ///   - parentController: The parent controller on which we are supposed to show sub-routes.
-    ///   - transition: Presentation trnasition
-    init(parentController: UIViewController?, transition: Transition)
+    ///   - transition: Presentation transition
+    init(navigationController: UINavigationController?, transition: Transition)
 
     /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
     /// If you need to pass a context to the target viewcontroller, do so via the `navigate(to:context:)` method.
@@ -81,18 +83,18 @@ public extension Router {
     /// - Parameters:
     ///   - parentController: The parent controller on which we are supposed to show sub-routes.
     ///   - transition: Presentation trnasition
-    init(parentController: UIViewController?, transition: Transition) {
+    init(navigationController: UINavigationController?, transition: Transition) {
         self.init()
-        self.parentController = parentController
+        self.navigationController = navigationController
         self.presentationTransition = transition
-        transition.sourceController = parentController
+        transition.sourceController = navigationController
     }
     
     /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
     /// If you need to pass a context to the target viewcontroller, do so via the `navigate(to:context:)` method.
     /// - Parameter route: Route
     func navigate(to route: RouteType) {
-        route.navigate(on: parentController)
+        route.navigate(on: navigationController)
     }
     
     /// Go back by reversing the presentation transition.
@@ -107,11 +109,11 @@ extension Router {
     /// Instantiate this router along with an parent controller, upon which we will show the router's associated view controller,
     /// a transition and a builder (which defaults to RouterBuilder)
     /// - Parameters:
-    ///   - parentController: Parent controller on which to show routes stemming from this router.
+    ///   - navigationController: Parent controller on which to show routes stemming from this router.
     ///   - transition: Presentation transition
     ///   - builder: Builder object.
     /// - Returns: A configured router.
-    static func resolve(parentController: UIViewController?, transition: Transition, builder: RouterBuilder = .default) -> Self {
-        return builder.build(parentController: parentController, transition: transition)
+    static func resolve(navigationController: UINavigationController?, transition: Transition, builder: RouterBuilder = .default) -> Self {
+        return builder.build(navigationController: navigationController, transition: transition)
     }
 }

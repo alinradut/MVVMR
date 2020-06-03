@@ -14,7 +14,7 @@ struct AppRouter: Router {
     init() {}
     
     var presentationTransition: Transition?
-    var parentController: UIViewController?
+    var navigationController: UINavigationController?
     
     typealias RouteType = Routes
     
@@ -26,12 +26,12 @@ struct AppRouter: Router {
             return .push
         }
         
-        func navigate(on parentController: UIViewController?) {
+        func navigate(on navigationController: UINavigationController?) {
             switch self {
             case .login:
-                Scene<LoginViewController>.show(on: parentController)
+                Scene<LoginViewController>.show(on: navigationController)
             case .dashboard:
-                Scene<DashboardViewController>.show(on: parentController, navigationStyle: navigationStyle) 
+                Scene<DashboardViewController>.show(on: navigationController, navigationStyle: navigationStyle)
             }
         }
     }

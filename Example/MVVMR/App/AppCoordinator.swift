@@ -22,8 +22,9 @@ class AppCoordinator {
     
     init(window: UIWindow) {
         self.window = window
-        window.rootViewController = UINavigationController()
-        router = AppRouter(parentController: window.rootViewController!, transition: NavigationStyle.push.transition)
+        let navigationController = UINavigationController()
+        window.rootViewController = navigationController
+        router = AppRouter(navigationController: navigationController, transition: NavigationStyle.push.transition)
         start()
     }
     

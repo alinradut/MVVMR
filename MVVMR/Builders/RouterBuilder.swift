@@ -16,8 +16,8 @@ public class RouterBuilder {
 
     public init() {}
 
-    public func build<R: Router>(parentController: UIViewController?, transition: Transition) -> R {
-        let router = R.init(parentController: parentController, transition: transition)
+    public func build<R: Router>(navigationController: UINavigationController?, transition: Transition) -> R {
+        let router = R.init(navigationController: navigationController, transition: transition)
         return router
     }
 }

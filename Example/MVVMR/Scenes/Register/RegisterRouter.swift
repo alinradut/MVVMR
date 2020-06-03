@@ -10,7 +10,7 @@ import Foundation
 import MVVMR
 
 struct RegisterRouter: Router {
-    weak var parentController: UIViewController?
+    weak var navigationController: UINavigationController?
     
     var presentationTransition: Transition?
     
@@ -20,15 +20,15 @@ struct RegisterRouter: Router {
         case dashboard
         case errorAlert(title: String, message: String)
 
-        func navigate(on parentController: UIViewController?) {
+        func navigate(on navigationController: UINavigationController?) {
             switch self {
             case .dashboard:
-                Scene<DashboardViewController>.show(on: parentController, navigationStyle: .replace)
+                Scene<DashboardViewController>.show(on: navigationController, navigationStyle: .replace)
             case .errorAlert(let title, let message):
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 alert.addAction(.init(title: "OK", style: .default, handler: nil))
                 let transition = ModalTransition()
-                transition.sourceController = parentController
+                transition.sourceController = navigationController
                 transition.run(to: alert)
             default:
                 break

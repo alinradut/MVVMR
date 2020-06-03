@@ -12,7 +12,7 @@ import MVVMR
 struct LoginRouter: Router {
     
     /// The controller this router and it's related view controller were presented on.
-    weak var parentController: UIViewController?
+    weak var navigationController: UINavigationController?
     
     /// The incoming transition that was used to display this scene. We keep a reference because
     /// we might want to reverse that transition at one point.
@@ -26,18 +26,18 @@ struct LoginRouter: Router {
         case errorAlert(title: String, message: String)
         case dashboard
         
-        func navigate(on parentController: UIViewController?) {
+        func navigate(on navigationController: UINavigationController?) {
             switch self {
             case .register:
-                Scene<RegisterViewController>.show(on: parentController)
+                Scene<RegisterViewController>.show(on: navigationController)
             case .errorAlert(let title, let message):
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 alert.addAction(.init(title: "OK", style: .default, handler: nil))
                 let transition = ModalTransition()
-                transition.sourceController = parentController
+                transition.sourceController = navigationController
                 transition.run(to: alert)
             case .dashboard:
-                Scene<DashboardViewController>.show(on: parentController, navigationStyle: .replace)
+                Scene<DashboardViewController>.show(on: navigationController, navigationStyle: .replace)
             default:
                 break
             }
