@@ -11,7 +11,7 @@ import UIKit
 public class ReplaceWindowRootTransition: NSObject, Transition {
     
     public enum AnimationType {
-        case none, pushRight, pushLeft, pushBottom, pushTop, fade
+        case none, pushFromRight, pushFromLeft, pushFromBottom, pushFromTop, fade
     }
     
     public var sourceController: UIViewController?
@@ -33,7 +33,7 @@ public class ReplaceWindowRootTransition: NSObject, Transition {
         return UIApplication.shared.keyWindow
     }
         
-    public init(_ animationType: AnimationType = .pushRight, onCompletion: (() -> Void)? = nil) {
+    public init(_ animationType: AnimationType = .pushFromRight, onCompletion: (() -> Void)? = nil) {
         self.animationType = animationType
         self.onCompletion = onCompletion
         isAnimated = animationType != .none
@@ -51,16 +51,16 @@ public class ReplaceWindowRootTransition: NSObject, Transition {
         switch animationType {
         case .fade:
             destinationController.view.alpha = 0
-        case .pushRight:
+        case .pushFromRight:
             destinationController.view.frame = window.bounds.offsetBy(dx: window.frame.width, dy: 0)
             sourceControllerFinalPosition = window.bounds.offsetBy(dx: -window.frame.width, dy: 0)
-        case .pushLeft:
+        case .pushFromLeft:
             destinationController.view.frame = window.bounds.offsetBy(dx: -window.frame.width, dy: 0)
             sourceControllerFinalPosition = window.bounds.offsetBy(dx: window.frame.width, dy: 0)
-        case .pushTop:
+        case .pushFromTop:
             destinationController.view.frame = window.bounds.offsetBy(dx: 0, dy: -window.frame.height)
             sourceControllerFinalPosition = window.bounds.offsetBy(dx: 0, dy: window.frame.height)
-        case .pushBottom:
+        case .pushFromBottom:
             destinationController.view.frame = window.bounds.offsetBy(dx: 0, dy: window.frame.height)
             sourceControllerFinalPosition = window.bounds.offsetBy(dx: 0, dy: -window.frame.height)
         default:
