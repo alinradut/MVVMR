@@ -32,7 +32,7 @@ public class ReplaceWindowRootTransition: NSObject, Transition {
         }
         return UIApplication.shared.keyWindow
     }
-        
+    
     public init(_ animationType: AnimationType = .pushFromRight, onCompletion: (() -> Void)? = nil) {
         self.animationType = animationType
         self.onCompletion = onCompletion
@@ -44,10 +44,15 @@ public class ReplaceWindowRootTransition: NSObject, Transition {
             return
         }
         
+        var destinationController = destinationController
+        if destinationController.navigationController != nil {
+            destinationController = destinationController.navigationController!
+        }
+        
         let sourceController = window.rootViewController
         
         var sourceControllerFinalPosition: CGRect = window.bounds
-
+        
         switch animationType {
         case .fade:
             destinationController.view.alpha = 0
@@ -68,16 +73,16 @@ public class ReplaceWindowRootTransition: NSObject, Transition {
         }
         
         destinationController.beginAppearanceTransition(true, animated: isAnimated)
+        sourceController?.beginAppearanceTransition(false, animated: isAnimated)
         window.addSubview(destinationController.view)
-
-        UIView.transition(with: window, duration: 0.4, options: [], animations: {
+        
+        UIView.animate(withDuration: 0.4, animations: {
             destinationController.view.alpha = 1
             sourceController?.view.frame = sourceControllerFinalPosition
             destinationController.view.frame = window.bounds
         }) { (isCompleted) in
             if isCompleted {
                 window.rootViewController = destinationController
-                destinationController.endAppearanceTransition()
                 self.onCompletion?()
             }
         }
