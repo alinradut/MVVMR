@@ -15,7 +15,6 @@ public protocol ViewModel {
 
     init()
     init(_ router: RouterType?)
-    func setContext(context: Any?)
 }
 
 public extension ViewModel {
@@ -23,10 +22,6 @@ public extension ViewModel {
     init(_ router: RouterType?) {
         self.init()
         self.router = router
-    }
-    
-    func setContext(context: Any?) {
-        // override from subclass
     }
 }
 
