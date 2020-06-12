@@ -58,8 +58,10 @@ extension PushTransition: UINavigationControllerDelegate {
         guard let animator = animator else { return nil }
 
         if operation == .push {
+            animator.isPresenting = true
             return animator
         } else {
+            animator.isPresenting = false
             return animator
         }
     }

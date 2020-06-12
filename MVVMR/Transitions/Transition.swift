@@ -22,6 +22,6 @@ public protocol AnimatedTransition: Transition {
 }
 
 public protocol Animator: UIViewControllerAnimatedTransitioning {
-    
+    var isPresenting: Bool { get set }
 }
 
