@@ -4,7 +4,7 @@
 XCODE_TEMPLATE_DIR=$HOME'/Library/Developer/Xcode/Templates/File Templates/MVVMR'
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Copy RIBs file templates into the local RIBs template directory
+# Copy file templates into the local RIBs template directory
 xcodeTemplate () {
   echo "==> Copying up Xcode file templates..."
 

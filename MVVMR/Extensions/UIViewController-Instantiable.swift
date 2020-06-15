@@ -10,9 +10,14 @@ import Foundation
 import UIKit
 
 public protocol StoryboardInstantiable: AnyObject {
+    
+    /// The storyboard file name. If `ownsStoryboard` is true, it will be the current class name, otherwise
+    /// it will be `Main`. This is useful to override when the the current class has a generic attached to it.
+    static var storyboardName: String { get }
+    
     /// The storyboard to use to load this controller. The default storyboard will be "Main".
     static var storyboard: UIStoryboard { get }
-
+    
     /// The storyboard identifier to use to load this controller. The default storyboard identifier will be the class name
     static var storyboardIdentifier: String { get }
     
