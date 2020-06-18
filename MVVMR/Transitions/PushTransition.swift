@@ -55,7 +55,7 @@ extension PushTransition: UINavigationControllerDelegate {
                               animationControllerFor operation: UINavigationController.Operation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let animator = animator else { return nil }
+        guard let animator = animator, isAnimated else { return nil }
 
         if operation == .push {
             animator.isPresenting = true
