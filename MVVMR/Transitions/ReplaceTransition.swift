@@ -13,6 +13,7 @@ public class ReplaceTransition: NSObject, Transition {
     public var animator: Animator?
     public var isAnimated: Bool
     var onCompletion: (() -> Void)?
+    var prependedControllers: [UIViewController] = []
     
     public weak var sourceController: UIViewController? {
         didSet {
@@ -27,16 +28,18 @@ public class ReplaceTransition: NSObject, Transition {
     
     private var navigationController: UINavigationController?
 
-    public init(animator: Animator? = nil, isAnimated: Bool = true, onCompletion: (() -> Void)? = nil) {
+    public init(animator: Animator? = nil, isAnimated: Bool = true, prependedControllers: [UIViewController] = [], onCompletion: (() -> Void)? = nil) {
         self.animator = animator
         self.isAnimated = isAnimated
+        self.prependedControllers = prependedControllers
         self.onCompletion = onCompletion
     }
 
     public func run(to destinationController: UIViewController) {
         assert(navigationController != nil, "sourceController is not an UINavigationController and does not have an associated UINavigationController")
         navigationController?.delegate = self
-        navigationController?.setViewControllers([destinationController], animated: isAnimated)
+        let controllers = prependedControllers + [destinationController]
+        navigationController?.setViewControllers(controllers, animated: isAnimated)
     }
     
     public func reverse() {
