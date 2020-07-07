@@ -105,6 +105,10 @@ public extension Router {
     func navigateBack() {
         presentationTransition?.reverse()
     }
+    
+    func showAlert(_ alert: Alert, animated: Bool = true, completion: (() -> Void)? = nil) {
+        navigationController?.present(alert.alertController, animated: animated, completion: completion)
+    }
 }
 
 
