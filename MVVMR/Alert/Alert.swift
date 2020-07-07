@@ -24,7 +24,7 @@ open class Alert {
     var style: UIAlertController.Style
     
     var alertController: UIAlertController {
-        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let controller = UIAlertController(title: title, message: message, preferredStyle: style)
         buttons.forEach { button in
             controller.addAction(.init(title: button.title, style: button.style, handler: { _ in button.action?() }))
         }
