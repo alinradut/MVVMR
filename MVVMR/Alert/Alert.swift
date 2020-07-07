@@ -21,6 +21,7 @@ open class Alert {
     
     var animated: Bool = true
     var completion: (() -> Void)? = nil
+    var style: UIAlertController.Style
     
     var alertController: UIAlertController {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -39,6 +40,7 @@ open class Alert {
     public init(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert) {
         self.title = title
         self.message = message
+        self.style = style
     }
     
     open func addButton(
