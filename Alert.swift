@@ -19,6 +19,9 @@ open class Alert {
     var title: String?
     var message: String?
     
+    var animated: Bool = true
+    var completion: (() -> Void)? = nil
+    
     var alertController: UIAlertController {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         buttons.forEach { button in

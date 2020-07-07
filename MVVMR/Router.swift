@@ -79,6 +79,9 @@ public protocol Router {
     
     /// Go back by reversing the presentation transition.
     func navigateBack()
+    
+    /// Present an alert object
+    func showAlert(_ alert: Alert)
 }
 
 public extension Router {
@@ -106,8 +109,9 @@ public extension Router {
         presentationTransition?.reverse()
     }
     
-    func showAlert(_ alert: Alert, animated: Bool = true, completion: (() -> Void)? = nil) {
-        navigationController?.present(alert.alertController, animated: animated, completion: completion)
+    /// Present an alert object
+    func showAlert(_ alert: Alert) {
+        navigationController?.present(alert.alertController, animated: alert.animated, completion: alert.completion)
     }
 }
 
