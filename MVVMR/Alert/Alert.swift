@@ -43,6 +43,7 @@ open class Alert {
         self.style = style
     }
     
+    @discardableResult
     open func addButton(
         title: String, action: (() -> Void)? = nil,
         style: UIAlertAction.Style = .default) -> Alert {
@@ -50,6 +51,7 @@ open class Alert {
         return self
     }
     
+    @discardableResult
     open func addTextField(with configurationBlock: @escaping ((UITextField) -> Void)) -> Alert {
         self.textFieldConfigurationBlocks.append(configurationBlock)
         return self
