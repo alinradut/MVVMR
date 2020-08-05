@@ -3,7 +3,8 @@
 import Foundation
 import MVVMR
 
-public typealias ___VARIABLE_productName___Context = Any
+public struct ___VARIABLE_productName___Context = {
+}
 
 public class ___VARIABLE_productName___ViewModel: ViewModel {
     
