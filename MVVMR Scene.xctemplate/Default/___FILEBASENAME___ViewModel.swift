@@ -3,7 +3,7 @@
 import Foundation
 import MVVMR
 
-public struct ___VARIABLE_productName___Context = {
+public struct ___VARIABLE_productName___Context {
 }
 
 public class ___VARIABLE_productName___ViewModel: ViewModel {
