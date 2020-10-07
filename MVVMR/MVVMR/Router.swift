@@ -94,7 +94,9 @@ public extension Router {
         self.init()
         self.navigationController = navigationController
         self.presentationTransition = transition
-        transition.sourceController = navigationController
+        if transition.sourceController == nil {
+            transition.sourceController = navigationController
+        }
     }
     
     /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
