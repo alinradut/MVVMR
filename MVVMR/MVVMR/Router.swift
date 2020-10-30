@@ -113,7 +113,11 @@ public extension Router {
     
     /// Present an alert object
     func showAlert(_ alert: Alert) {
-        navigationController?.present(alert.alertController, animated: alert.animated, completion: alert.completion)
+        if let currentModal = navigationController?.presentedViewController {
+            currentModal.present(alert.alertController, animated: alert.animated, completion: alert.completion)
+        } else {
+            navigationController?.present(alert.alertController, animated: alert.animated, completion: alert.completion)
+        }
     }
 }
 
