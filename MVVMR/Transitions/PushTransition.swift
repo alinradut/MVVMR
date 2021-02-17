@@ -26,7 +26,7 @@ public class PushTransition: NSObject, AnimatedTransition {
         }
     }
     
-    private var navigationController: UINavigationController?
+    private weak var navigationController: UINavigationController?
 
     public init(animator: Animator? = nil, isAnimated: Bool = true, onCompletion: (() -> Void)? = nil) {
         self.animator = animator
