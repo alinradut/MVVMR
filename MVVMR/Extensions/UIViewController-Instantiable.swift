@@ -47,7 +47,7 @@ public extension StoryboardInstantiable where Self: UIViewController {
     
     static var storyboardName: String {
         if ownsStoryboard {
-            return String(describing: self)
+            return self.nameWithoutGenerics()
         }
         return "Main"
     }
@@ -57,7 +57,7 @@ public extension StoryboardInstantiable where Self: UIViewController {
     }
     
     static var storyboardIdentifier: String {
-        return String(describing: self)
+        return self.nameWithoutGenerics()
     }
     
     static var ownsStoryboard: Bool {
@@ -79,7 +79,7 @@ public extension StoryboardInstantiable where Self: UIViewController {
 public extension NibInstantiable where Self: UIViewController {
     
     static var nibName: String {
-        return String(describing: self)
+        return self.nameWithoutGenerics()
     }
     
     static func fromNib<VC: UIViewController>() -> VC {
@@ -87,3 +87,12 @@ public extension NibInstantiable where Self: UIViewController {
     }
 }
 
+extension UIViewController {
+    public static func nameWithoutGenerics() -> String {
+        var name = String(describing: self)
+        if let range = name.range(of: "<") {
+            name = String(name.prefix(upTo: range.lowerBound))
+        }
+        return name
+    }
+}
