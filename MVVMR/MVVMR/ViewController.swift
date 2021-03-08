@@ -12,19 +12,27 @@ import UIKit
 public protocol ViewController: class {
 
     associatedtype ViewModelType: ViewModel
+    
+    /// Associated view model.
+    ///
+    /// The reason why this is an implicitly unwrapped optional is because we want to keep using
+    /// the standard way of initializing a view controller, be that from init() or from a storyboard or nib.
     var viewModel: ViewModelType! { get set }
     
     init()
 }
 
-extension ViewController where Self: UIViewController {
+public extension ViewController where Self: UIViewController {
     
-    public func inject(viewModel: ViewModelType) {
+    func inject(viewModel: ViewModelType) {
         self.viewModel = viewModel
     }
 }
 
-extension ViewController where Self: UIViewController {
+public extension ViewController where Self: UIViewController {
+    
+    /// Instantiate a new view controller from storyboard, nib or basic initializer.
+    /// - Returns: An instance of the current class.
     static func resolve() -> Self {
         var viewController: Self
         

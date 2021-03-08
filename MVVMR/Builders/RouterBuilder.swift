@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 /// Factory for routers.
-public class RouterBuilder {
+open class RouterBuilder {
     
     public static var `default` = RouterBuilder()
 
     public init() {}
 
-    public func build<R: Router>(navigationController: UINavigationController?, transition: Transition) -> R {
+    open func build<R: Router>(navigationController: UINavigationController?, transition: Transition) -> R {
         let router = R.init(navigationController: navigationController, transition: transition)
         return router
     }

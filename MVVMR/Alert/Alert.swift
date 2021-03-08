@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+/// An abstracted representation of `UIAlertController`. This can be used to avoid dealing with the alert presentation
+/// API in the view model.
 open class Alert {
     
     struct Button {

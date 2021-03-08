@@ -25,7 +25,7 @@ public extension ViewModel {
     }
 }
 
-extension ViewModel {
+public extension ViewModel {
     static func resolve(router: RouterType, builder: ViewModelBuilder = .default) -> Self {
         return builder.build(router: router)
     }
