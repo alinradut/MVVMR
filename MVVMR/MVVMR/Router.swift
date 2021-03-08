@@ -9,42 +9,6 @@
 import Foundation
 import UIKit
 
-
-/// The navigation style to use when displaying a controller.
-public enum NavigationStyle {
-    
-    // Will call `navigationController?.push(...)`
-    case push
-    
-    // Will call `navigationController?.present`
-    case modal
-    
-    // Will replace all view controllers in the navigation controller with the destination controller
-    case replace
-    
-    // Will replace the key window's rootViewController
-    case replaceWindowRoot(ReplaceWindowRootTransition.AnimationType)
-    
-    // A custom presentation based on the associated transition.
-    case custom(Transition)
-    
-    /// The associated transition.
-    public var transition: Transition {
-        switch self {
-        case .push:
-            return PushTransition()
-        case .modal:
-            return ModalTransition()
-        case .replace:
-            return ReplaceTransition()
-        case .replaceWindowRoot(let animation):
-            return ReplaceWindowRootTransition(animation)
-        case .custom(let transition):
-            return transition
-        }
-    }
-}
-
 /// Basic route protocol which is usually associated with a router.
 public protocol Route {
     
@@ -100,7 +64,8 @@ public extension Router {
     }
     
     /// Navigate to a route. The `route` will be asked to produce a view controller and the navigation style.
-    /// If you need to pass a context to the target viewcontroller, do so via the `navigate(to:context:)` method.
+    /// If you need to pass a context to the target view controller, do so via the `ViewController.ViewModel.setContext`
+    /// method
     /// - Parameter route: Route
     func navigate(to route: RouteType) {
         route.navigate(on: navigationController)
@@ -121,17 +86,19 @@ public extension Router {
     }
 }
 
-
 extension Router {
     
-    /// Instantiate this router along with an parent controller, upon which we will show the router's associated view controller,
-    /// a transition and a builder (which defaults to RouterBuilder)
+    /// Instantiate this router along with an parent controller and a transition.
     /// - Parameters:
     ///   - navigationController: Parent controller on which to show routes stemming from this router.
     ///   - transition: Presentation transition
     ///   - builder: Builder object.
     /// - Returns: A configured router.
-    static func resolve(navigationController: UINavigationController?, transition: Transition, builder: RouterBuilder = .default) -> Self {
+    static func resolve(
+        navigationController: UINavigationController?,
+        transition: Transition,
+        builder: RouterBuilder = .default) -> Self {
+        
         return builder.build(navigationController: navigationController, transition: transition)
     }
 }
