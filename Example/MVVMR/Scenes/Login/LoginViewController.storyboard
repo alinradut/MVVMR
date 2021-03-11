@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vKn-9P-Ny8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vKn-9P-Ny8">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,14 +61,14 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwe-Lm-xlR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwe-Lm-xlR">
                                         <rect key="frame" x="0.0" y="176" width="355" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="onLoginBtnTapped" destination="vKn-9P-Ny8" eventType="touchUpInside" id="KHv-4n-xDL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47o-34-A1b">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47o-34-A1b">
                                         <rect key="frame" x="0.0" y="216" width="355" height="30"/>
                                         <state key="normal" title="Don't have an account? Register now."/>
                                         <connections>
@@ -86,13 +86,14 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="HgA-Aw-ocO"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RfE-Qq-non" firstAttribute="height" secondItem="HgA-Aw-ocO" secondAttribute="height" multiplier="0.5" id="7VK-Pf-kfX"/>
                             <constraint firstItem="RfE-Qq-non" firstAttribute="width" secondItem="BNZ-bO-rhc" secondAttribute="width" constant="-20" id="CHn-KV-Ixn"/>
                             <constraint firstItem="RfE-Qq-non" firstAttribute="centerX" secondItem="HgA-Aw-ocO" secondAttribute="centerX" id="Owo-g9-ddh"/>
                             <constraint firstItem="RfE-Qq-non" firstAttribute="top" secondItem="HgA-Aw-ocO" secondAttribute="top" id="Qer-wx-tws"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HgA-Aw-ocO"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="xwe-Lm-xlR" id="PC1-3m-ha2"/>

@@ -29,7 +29,14 @@ struct LoginRouter: Router {
         func navigate(on navigationController: UINavigationController?) {
             switch self {
             case .register:
-                Scene<RegisterViewController>.show(on: navigationController, navigationStyle: .custom(PushTransition(animator: VerticalTransitionAnimator(), isAnimated: true, onCompletion: nil)))
+                Scene<RegisterViewController>.show(
+                    on: navigationController,
+                    navigationStyle: .custom(
+                        PushTransition(animator: VerticalTransitionAnimator(),
+                                       isAnimated: true,
+                                       onCompletion: nil)
+                    ))
+                
             case .errorAlert(let title, let message):
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 alert.addAction(.init(title: "OK", style: .default, handler: nil))

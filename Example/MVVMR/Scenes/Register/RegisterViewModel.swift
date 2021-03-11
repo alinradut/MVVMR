@@ -13,8 +13,7 @@ import RxCocoa
 
 class RegisterViewModel: ViewModel {
     
-    
-    var router: RegisterRouter?
+    var router: BasicRouter<RegisterRoute>?
     var isValid: Observable<Bool>
     var isRegistering: BehaviorRelay<Bool> = .init(value: false)
     var username: BehaviorSubject<String> = .init(value: "")

@@ -14,15 +14,17 @@ class DashboardCell: UICollectionViewCell {
     @IBOutlet weak var iconLabel: UILabel?
     @IBOutlet weak var titleLabel: UILabel?
     
-    func bindViewModel() {
-        
-    }
+    private var viewModel: DashboardCellViewModel? 
     
-    func unbindViewModel() {
-        
+    func configure(with viewModel: DashboardCellViewModel) {
+        self.viewModel = viewModel
     }
     
     override func prepareForReuse() {
-        unbindViewModel()
+        viewModel = nil
     }
+}
+
+struct DashboardCellViewModel {
+    
 }
