@@ -14,7 +14,7 @@ public class PushTransition: NSObject, AnimatedTransition {
     public var animator: Animator?
     public var isAnimated: Bool
     var onCompletion: (() -> Void)?
-    
+
     public weak var sourceController: UIViewController? {
         didSet {
             if let navigationController = sourceController?.navigationController {
@@ -25,7 +25,7 @@ public class PushTransition: NSObject, AnimatedTransition {
             }
         }
     }
-    
+
     private weak var navigationController: UINavigationController?
     private weak var originalDelegate: UINavigationControllerDelegate?
     private weak var originalIPGRDelegate: UIGestureRecognizerDelegate?
@@ -37,17 +37,28 @@ public class PushTransition: NSObject, AnimatedTransition {
     }
 
     deinit {
-        navigationController?.delegate = originalDelegate
-        navigationController?.interactivePopGestureRecognizer?.delegate = originalIPGRDelegate
+        if originalDelegate != nil {
+            navigationController?.delegate = originalDelegate
+        }
+        if originalIPGRDelegate != nil {
+            navigationController?.interactivePopGestureRecognizer?.delegate = originalIPGRDelegate
+        }
     }
 
     public func run(to destinationController: UIViewController) {
         assert(navigationController != nil, "sourceController is not an UINavigationController and does not have an associated UINavigationController")
-        navigationController?.delegate = self
+
+        if onCompletion != nil {
+            originalDelegate = navigationController?.delegate
+            navigationController?.delegate = self
+        }
+
+        originalIPGRDelegate = navigationController?.interactivePopGestureRecognizer?.delegate
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+
         navigationController?.pushViewController(destinationController, animated: isAnimated)
     }
-    
+
     public func reverse() {
         navigationController?.popViewController(animated: isAnimated)
     }
@@ -57,7 +68,7 @@ extension PushTransition: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController,
                                      didShow viewController: UIViewController,
                                      animated: Bool) {
-        
+
         onCompletion?()
         originalDelegate?.navigationController?(navigationController, didShow: viewController, animated: animated)
     }
@@ -71,15 +82,15 @@ extension PushTransition: UINavigationControllerDelegate {
 
     public func navigationController(_ navigationController: UINavigationController,
                                      interactionControllerFor animationController: UIViewControllerAnimatedTransitioning
-        ) -> UIViewControllerInteractiveTransitioning? {
+    ) -> UIViewControllerInteractiveTransitioning? {
 
         originalDelegate?.navigationController?(navigationController, interactionControllerFor: animationController)
     }
-    
+
     public func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                                     animationControllerFor operation: UINavigationController.Operation,
+                                     from fromVC: UIViewController,
+                                     to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let animator = animator, isAnimated else { return nil }
 
         if operation == .push {
