@@ -27,11 +27,18 @@ public class PushTransition: NSObject, AnimatedTransition {
     }
     
     private weak var navigationController: UINavigationController?
+    private weak var originalDelegate: UINavigationControllerDelegate?
+    private weak var originalIPGRDelegate: UIGestureRecognizerDelegate?
 
     public init(animator: Animator? = nil, isAnimated: Bool = true, onCompletion: (() -> Void)? = nil) {
         self.animator = animator
         self.isAnimated = isAnimated
         self.onCompletion = onCompletion
+    }
+
+    deinit {
+        navigationController?.delegate = originalDelegate
+        navigationController?.interactivePopGestureRecognizer?.delegate = originalIPGRDelegate
     }
 
     public func run(to destinationController: UIViewController) {
@@ -47,8 +54,26 @@ public class PushTransition: NSObject, AnimatedTransition {
 }
 
 extension PushTransition: UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController,
+                                     didShow viewController: UIViewController,
+                                     animated: Bool) {
+        
         onCompletion?()
+        originalDelegate?.navigationController?(navigationController, didShow: viewController, animated: animated)
+    }
+
+    public func navigationController(_ navigationController: UINavigationController,
+                                     willShow viewController: UIViewController,
+                                     animated: Bool) {
+
+        originalDelegate?.navigationController?(navigationController, willShow: viewController, animated: animated)
+    }
+
+    public func navigationController(_ navigationController: UINavigationController,
+                                     interactionControllerFor animationController: UIViewControllerAnimatedTransitioning
+        ) -> UIViewControllerInteractiveTransitioning? {
+
+        originalDelegate?.navigationController?(navigationController, interactionControllerFor: animationController)
     }
     
     public func navigationController(_ navigationController: UINavigationController,
@@ -68,7 +93,8 @@ extension PushTransition: UINavigationControllerDelegate {
 }
 
 extension PushTransition: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                                  shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
