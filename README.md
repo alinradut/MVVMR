@@ -20,6 +20,8 @@ The basic idea is the following: each screen is a `Scene`, which in turn is comp
 
 Unlike other implementations, MVVMR is not very opinionated about how to structure your code, leaving you full control of your implementation.
 
+![MVVMR](/MVVMR_diagram.png)
+
 #### Passing data between scenes
 
 Although not required by default, it is recommended that a view model has a context object that is used to receive and exchange data with the upstream scenes. A common implementation would be the following:
