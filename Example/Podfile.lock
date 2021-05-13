@@ -1,23 +1,19 @@
 PODS:
-  - FontAwesome.swift (1.9.0)
+  - FontAwesome.swift (1.9.1)
   - MBProgressHUD (1.2.0)
   - MVVMR (0.1.0)
-  - Nimble (7.3.4)
-  - Quick (1.2.0)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
   - SimpleTwoWayBinding (0.0.5)
 
 DEPENDENCIES:
   - FontAwesome.swift
   - MBProgressHUD
   - MVVMR (from `../`)
-  - Nimble (~> 7.0)
-  - Quick (~> 1.2.0)
   - RxCocoa
   - RxSwift
   - SimpleTwoWayBinding (from `https://github.com/alinradut/SimpleTwoWayBindingIOS.git`)
@@ -26,8 +22,6 @@ SPEC REPOS:
   trunk:
     - FontAwesome.swift
     - MBProgressHUD
-    - Nimble
-    - Quick
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -40,20 +34,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SimpleTwoWayBinding:
-    :commit: 29bc7d131dcbac9e330f6f5cb9e61f4f127bbff2
+    :commit: f3e54a45337b6638c6bde0371ff53615ca9a2d4c
     :git: https://github.com/alinradut/SimpleTwoWayBindingIOS.git
 
 SPEC CHECKSUMS:
-  FontAwesome.swift: a403b88cec950511745ba8f2decd1b6a07346d13
+  FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MVVMR: 9a2584f83f136be0e7a4a2c2c013ec0a636f7a98
-  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SimpleTwoWayBinding: 3d3f60668ac149de29df5e954f919b8825511478
 
-PODFILE CHECKSUM: 87af85266dca2125df3cd6cbbb0f5983e5d75a68
+PODFILE CHECKSUM: 1c0fa416a6be1ca9b5e22af22c7a346f03dde4ad
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1
