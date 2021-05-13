@@ -21,3 +21,12 @@ public struct BasicRouter<T: Route>: Router {
     
     public init() {}
 }
+
+public typealias NullRouter = BasicRouter<NullRoute>
+
+public enum NullRoute: Route {
+    case none
+
+    public func navigate(on navigationController: UINavigationController?) {
+    }
+}
