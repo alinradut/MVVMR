@@ -11,7 +11,7 @@ import MVVMR
 
 struct DashboardViewModel: ViewModel {
     
-    var router: DashboardRouter?
+    var router: DashboardRouter = DashboardRouter()
     
     var categories: [Category] = []
 }

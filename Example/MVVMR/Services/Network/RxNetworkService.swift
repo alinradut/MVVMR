@@ -25,7 +25,7 @@ class FakeRxNetworkService: RxNetworkService {
             // call to backend
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 if username == "error" {
-                    single(.error(NetworkServiceError.alreadyRegistered))
+                    single(.failure(NetworkServiceError.alreadyRegistered))
                 }
                 else {
                     single(.success(RegisterResponse(token: "TOKEN", username: username, password: password)))

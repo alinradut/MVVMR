@@ -12,7 +12,7 @@ import SimpleTwoWayBinding
 
 class LoginViewModel: ViewModel {
     
-    var router: LoginRouter?
+    var router: LoginRouter = .init()
     let username: Observable<String> = .init()
     let password: Observable<String> = .init()
     let isValid: Observable<Bool>
@@ -35,12 +35,12 @@ class LoginViewModel: ViewModel {
     func onLogin() {
 
         guard let username = username.value, !username.isEmpty else {
-            router?.navigate(to: .errorAlert(title: "Error", message: "Please enter a username"))
+            router.navigate(to: .errorAlert(title: "Error", message: "Please enter a username"))
             return
         }
         
         guard let password = password.value, !password.isEmpty else {
-            router?.navigate(to: .errorAlert(title: "Error", message: "Please enter a password"))
+            router.navigate(to: .errorAlert(title: "Error", message: "Please enter a password"))
             return
         }
         
@@ -49,15 +49,15 @@ class LoginViewModel: ViewModel {
             self?.isWorking.value = false
             switch result {
             case .failure(let error):
-                self?.router?.navigate(to: .errorAlert(title: "Error", message: error.localizedDescription))
+                self?.router.navigate(to: .errorAlert(title: "Error", message: error.localizedDescription))
             case .success(let authToken):
                 CurrentUser.profile = Profile(username: username, password: password, authToken: authToken)
-                self?.router?.navigate(to: .dashboard)
+                self?.router.navigate(to: .dashboard)
             }
         }
     }
     
     func onRegister() {
-        router?.navigate(to: .register)
+        router.navigate(to: .register)
     }
 }

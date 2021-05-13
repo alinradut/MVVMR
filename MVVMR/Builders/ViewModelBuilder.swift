@@ -15,8 +15,8 @@ public class ViewModelBuilder {
     
     public init() {}
 
-    public func build<VM: ViewModel>(router: VM.RouterType, setContext: ((VM) -> Void)? = nil) -> VM {
-        let viewModel = VM.init(router)
+    public func build<VM: ViewModel>(setContext: ((VM) -> Void)? = nil) -> VM {
+        let viewModel = VM.init()
         setContext?(viewModel)
         return viewModel
     }

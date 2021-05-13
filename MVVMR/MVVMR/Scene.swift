@@ -21,9 +21,11 @@ public struct Scene<VC: ViewController & UIViewController> {
          transition: Transition,
          setContext: ((VC.ViewModelType) -> Void)? = nil) {
         
-        router = VC.ViewModelType.RouterType.resolve(navigationController: navigationController,
-                                                     transition: transition)
-        viewModel = VC.ViewModelType.resolve(router: router)
+        viewModel = VC.ViewModelType.resolve()
+        viewModel.configureRouter({
+            $0.configure(navigationController: navigationController, transition: transition)
+        })
+        router = viewModel.router
 
         setContext?(viewModel)
         viewController = VC.resolve()

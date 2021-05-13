@@ -33,9 +33,15 @@ public protocol Router {
     init()
     /// Initializer
     /// - Parameters:
-    ///   - parentController: The parent controller on which we are supposed to show sub-routes.
+    ///   - navigationController: The parent controller on which we are supposed to show sub-routes.
     ///   - transition: Presentation transition
     init(navigationController: UINavigationController?, transition: Transition)
+
+    /// Update the attached navigation controller and transition.
+    /// - Parameters:
+    ///   - navigationController: The parent controller on which we are supposed to show sub-routes.
+    ///   - transition: Presentation transition
+    mutating func configure(navigationController: UINavigationController?, transition: Transition)
 
     /// Navigate to a route. The `route` will be have to handle the navigation in it's `navigate(on:)` method.
     /// - Parameter route: RouteType
@@ -56,6 +62,10 @@ public extension Router {
     ///   - transition: Presentation trnasition
     init(navigationController: UINavigationController?, transition: Transition) {
         self.init()
+        configure(navigationController: navigationController, transition: transition)
+    }
+
+    mutating func configure(navigationController: UINavigationController?, transition: Transition) {
         self.navigationController = navigationController
         self.presentationTransition = transition
         if transition.sourceController == nil {
@@ -83,22 +93,5 @@ public extension Router {
         } else {
             navigationController?.present(alert.alertController, animated: alert.animated, completion: alert.completion)
         }
-    }
-}
-
-extension Router {
-    
-    /// Instantiate this router along with an parent controller and a transition.
-    /// - Parameters:
-    ///   - navigationController: Parent controller on which to show routes stemming from this router.
-    ///   - transition: Presentation transition
-    ///   - builder: Builder object.
-    /// - Returns: A configured router.
-    static func resolve(
-        navigationController: UINavigationController?,
-        transition: Transition,
-        builder: RouterBuilder = .default) -> Self {
-        
-        return builder.build(navigationController: navigationController, transition: transition)
     }
 }

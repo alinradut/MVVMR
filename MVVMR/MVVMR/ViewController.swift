@@ -18,8 +18,8 @@ public protocol ViewController: class {
     /// The reason why this is an implicitly unwrapped optional is because we want to keep using
     /// the standard way of initializing a view controller, be that from init() or from a storyboard or nib.
     var viewModel: ViewModelType! { get set }
-    
-    init()
+
+    func inject(viewModel: ViewModelType)
 }
 
 public extension ViewController where Self: UIViewController {

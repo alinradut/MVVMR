@@ -13,7 +13,7 @@ import RxCocoa
 
 class RegisterViewModel: ViewModel {
     
-    var router: BasicRouter<RegisterRoute>?
+    var router: BasicRouter<RegisterRoute> = .init()
     var isValid: Observable<Bool>
     var isRegistering: BehaviorRelay<Bool> = .init(value: false)
     var username: BehaviorSubject<String> = .init(value: "")
@@ -46,15 +46,15 @@ class RegisterViewModel: ViewModel {
             .subscribe(onSuccess: { [weak self] (response) in
             self?.isRegistering.accept(false)
             CurrentUser.profile = Profile(username: response.username, password: response.password, authToken: response.token)
-            self?.router?.navigate(to: .dashboard)
+            self?.router.navigate(to: .dashboard)
         }) { [weak self] (error) in
             self?.isRegistering.accept(false)
             self?.didFailSignIn.onNext(error)
-            self?.router?.navigate(to: .errorAlert(title: "Error", message: error.localizedDescription))
+            self?.router.navigate(to: .errorAlert(title: "Error", message: error.localizedDescription))
         }.disposed(by: disposeBag)
     }
         
     func onBack() {
-        router?.navigateBack()
+        router.navigateBack()
     }
 }
