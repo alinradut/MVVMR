@@ -8,7 +8,7 @@ public struct ___VARIABLE_productName___Context {
 
 public class ___VARIABLE_productName___ViewModel: ViewModel {
 
-    public var router: BasicRouter<___VARIABLE_productName___Route>?
+    public var router: BasicRouter<___VARIABLE_productName___Route> = .init()
 
     private(set) var context: ___VARIABLE_productName___Context!
 
