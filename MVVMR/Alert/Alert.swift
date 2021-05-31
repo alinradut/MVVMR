@@ -18,12 +18,12 @@ open class Alert {
         var style: UIAlertAction.Style = .default
     }
     
-    var title: String?
-    var message: String?
+    open var title: String?
+    open var message: String?
     
-    var animated: Bool = true
-    var completion: (() -> Void)? = nil
-    var style: UIAlertController.Style
+    open var animated: Bool = true
+    open var completion: (() -> Void)? = nil
+    open var style: UIAlertController.Style
     
     var alertController: UIAlertController {
         let controller = UIAlertController(title: title, message: message, preferredStyle: style)
