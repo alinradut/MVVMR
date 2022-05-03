@@ -17,10 +17,10 @@ public class PushTransition: NSObject, AnimatedTransition {
 
     public weak var sourceController: UIViewController? {
         didSet {
-            if let navigationController = sourceController?.navigationController {
+            if let navigationController = sourceController as? UINavigationController {
                 self.navigationController = navigationController
             }
-            else if let navigationController = sourceController as? UINavigationController {
+            else if let navigationController = sourceController?.navigationController {
                 self.navigationController = navigationController
             }
         }
