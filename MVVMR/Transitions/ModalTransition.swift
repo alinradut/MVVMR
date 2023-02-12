@@ -55,13 +55,14 @@ public class ModalTransition: NSObject, AnimatedTransition {
     }
 
     public func run(to destinationController: UIViewController) {
-        self.destinationController = embeddingBlock?(destinationController) ?? destinationController
+        let controller = embeddingBlock?(destinationController) ?? destinationController
 
-        destinationController.transitioningDelegate = self
-        destinationController.modalTransitionStyle = modalTransitionStyle
-        destinationController.modalPresentationStyle = modalPresentationStyle
+        controller.transitioningDelegate = self
+        controller.modalTransitionStyle = modalTransitionStyle
+        controller.modalPresentationStyle = modalPresentationStyle
 
-        sourceController?.present(destinationController, animated: isAnimated, completion: onShow)
+        self.destinationController = controller
+        sourceController?.present(controller, animated: isAnimated, completion: onShow)
     }
 
     public func reverse() {
