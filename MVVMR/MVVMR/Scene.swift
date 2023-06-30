@@ -15,7 +15,9 @@ public struct Scene<VC: ViewController & UIViewController> {
     public private(set) var viewController: VC
     public private(set) var viewModel: VC.ViewModelType
     public private(set) var router: VC.ViewModelType.RouterType
-    public private(set) var navigationController: UINavigationController?
+    public var navigationController: UINavigationController? {
+        router.navigationController
+    }
     
     init(navigationController: UINavigationController?,
          transition: Transition,
